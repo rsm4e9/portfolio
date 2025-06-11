@@ -102,7 +102,7 @@ document.querySelector('.btn').addEventListener('click', function(e) {
     e.preventDefault(); // Prevent default anchor behavior
     
     // Replace with your actual resume URL
-    const resumeUrl = 'https://drive.google.com/file/d/12FmyCPoRzOAZ4ciFYHZ6Gk33NtSPtHPF/view?usp=sharing';
+    const resumeUrl = 'https://drive.google.com/file/d/1EI0E7M4HoMtXOvF0mtPtNfEDblt99ymp/view?usp=drivesdk ';
     
     // Create temporary download link
     const link = document.createElement('a');
@@ -119,8 +119,18 @@ document.querySelector('.btn').addEventListener('click', function(e) {
     document.body.removeChild(link);
     
     // Reset button text after delay
+  document.querySelectorAll('.anim-text').forEach(el => {
+  el.addEventListener('click', function () {
+    if (window.innerWidth <= 768) {
+      return; // Do nothing on mobile
+    }
+
+    const originalText = this.innerText;
+    this.innerText = 'Loading...'; // or animated text
+
     setTimeout(() => {
-      this.innerHTML = originalText;
+      this.innerText = originalText;
     }, 2000);
   });
-
+});
+});

@@ -19,17 +19,21 @@
     --main-color: #76AABF
 }
 html {
+    margin: 0;
+    padding: 0;
     font-size: 62.5%;
     overflow-x: hidden;
 }
 
 body {
     color: antiquewhite;
+    margin: 0;
 
 }
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
+    box-sizing: border-box;
 }
 
 .header {
@@ -223,6 +227,8 @@ section {
     font-family: 'Poppins', sans-serif;
     padding: 20px;
     background-color: var(--bg-color);
+    margin: 0;
+ margin-right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -612,13 +618,17 @@ bottom: 50px;
 
 /* project */
 .projects{
-    display: flex;
-    height: auto;
+   min-height: 100vh;
+     background-color: var(--bg-color);
     width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-   background-color: var(--bg-color);;
+    padding: 20px;
+ 
+
     
 }
 .projects .heading-1 {
@@ -1173,7 +1183,7 @@ bottom: 50px;
             position: relative;
 
             /* Adjust position for smaller screens */
-            right: 20%;
+            right:40px;
             /* Keep centered */
             /* Adjust for centering */
             /* Disable animation if it causes issues */
@@ -1195,6 +1205,10 @@ bottom: 50px;
         .home .home-right .img {
             animation: none;
            display: block;
+        }
+        .home .home-content h4{
+           display: block;
+           animation: name duration timing-function delay iteration-count direction fill-mode;
         }
 
     }
@@ -1302,11 +1316,17 @@ bottom: 50px;
             position: relative;
             bottom: 20rem;
             left: 0;
-            width: 10vw;
-        }
-       
+            width: 5vw;
         
-        .skill-right .professional {
+        }
+               
+        @media (max-width: 768px) {
+            .skill-right .professional {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+               
+           .skill-right .professional {
             width: 100%;
             /* Full width for professional skills container */
             
@@ -1317,7 +1337,7 @@ bottom: 50px;
             /* Reduce gap between boxes */
             justify-content: center;
             /* Center the boxes */
-        }
+        } 
 
         .box {
             flex: 1 1 calc(50% - 15px);
@@ -1330,13 +1350,15 @@ bottom: 50px;
             /* Smaller circles */
             height: 100px;
             margin-left: 10rem;
+            max-width: 100%;
         }
 
         .box .text big {
+            height: 100px;
             font-size: 2rem;
             position:relative ;
              bottom: 8rem; /*and edit circles content inresponsive */
-            left: 2rem;
+            left: 5rem;
             /* Adjust percentage text size */
         }
 
@@ -1345,8 +1367,8 @@ bottom: 50px;
             font-size: 2rem;
             /* Adjust skill name text size */
             position: relative;
-            bottom: 0.02rem;
-            left:2rem;
+            bottom: 0.03rem;
+            left:5rem;
            
         }
 
@@ -1357,6 +1379,7 @@ bottom: 50px;
         }
     }
 }
+    }
 @media (max-width: 768px){
      .head-1 h1{
         position: relative;
@@ -1365,8 +1388,29 @@ bottom: 50px;
         font-size: 25px;
 
 }
-.projects h2{
+}
+@media (max-width: 768px) {
+  .projects {
+    padding: 10px;
+    max-height: 100%;
+    background: fixed;
+    background-size: cover;
+    background-position: center;
+
+
+  }
+    .projects h2{
     position: relative;
-    bottom: -10rem;
+    bottom: 20rem;
+}
+
+  .project-container {
+    width: 100%;
+  }
+
+  .project-card {
+    width: 90%; /* responsive width */
+    margin: 10px auto;
+  }
 }
 }
